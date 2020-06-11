@@ -1,0 +1,8 @@
+type Mutation {
+    createPost(
+        Token: String!
+        GroupID: ID!
+        Title: String
+        Contents: String
+    ): post
+}

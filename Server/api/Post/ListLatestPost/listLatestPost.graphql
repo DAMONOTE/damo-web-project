@@ -1,0 +1,6 @@
+type Query {
+    listLatestPost(
+        Token: String!
+        GroupID: ID!
+    ): [post]
+}

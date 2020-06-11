@@ -1,0 +1,9 @@
+type Mutation {
+    updatePost(
+        Token: String!
+        GroupID: ID!
+        PostID: ID!
+        Title: String
+        Contents: String!
+    ): post
+}

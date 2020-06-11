@@ -1,0 +1,6 @@
+type Mutation {
+    createGroup(
+        GroupName: String!
+        Token: String!
+        ): group
+}

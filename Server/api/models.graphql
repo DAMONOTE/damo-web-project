@@ -1,0 +1,34 @@
+type user {
+  _id: ID!
+  AccountName: String!
+  Password: String!
+  Name: String
+  Email: String
+  Gid: [ID]
+}
+
+type auth {
+  Token: String
+  AccountName: String
+}
+
+type msg {
+  Msg: String
+}
+
+type group {
+  _id: ID!
+  GroupMasterID: ID!
+  GroupName: String
+  Members: [ID]
+}
+
+type post {
+  _id: ID!
+  GroupID: ID!
+  UserID: ID!
+  Title: String!
+  Contents: String
+  CreatedDate: String!
+  ModifiedDate: String!
+}

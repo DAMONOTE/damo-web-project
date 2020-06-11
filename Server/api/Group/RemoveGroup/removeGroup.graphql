@@ -1,0 +1,6 @@
+type Mutation {
+    removeGroup(
+        GroupName: String!
+        Token: String!
+        ): group
+}

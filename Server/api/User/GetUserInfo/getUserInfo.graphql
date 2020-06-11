@@ -1,0 +1,5 @@
+type Query {
+    getUserInfo(
+        Token: String!
+    ): user
+}

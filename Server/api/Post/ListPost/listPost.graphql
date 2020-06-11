@@ -1,0 +1,8 @@
+type Query {
+    listPost(
+        Token: String!
+        GroupID: ID!
+        Amount: Int
+        Page: Int
+    ): [post]
+}

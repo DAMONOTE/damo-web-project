@@ -1,0 +1,6 @@
+type Mutation {
+    signInUser(
+        AccountName: String!
+        Password: String!
+    ): auth
+}

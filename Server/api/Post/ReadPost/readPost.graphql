@@ -1,0 +1,6 @@
+type Query {
+    readPost(
+        Token: String!
+        PostID: ID!
+    ): post
+}

@@ -1,0 +1,7 @@
+type Mutation {
+    deletePost(
+        Token: String!
+        GroupID: ID!
+        PostID: ID!
+    ): post
+}

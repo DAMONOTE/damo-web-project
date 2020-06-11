@@ -1,0 +1,6 @@
+type Query {
+    getGroupInfo(
+        Token: String!
+        _id: ID!
+    ): group
+}
