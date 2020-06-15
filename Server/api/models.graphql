@@ -8,7 +8,8 @@ type user {
 }
 
 type auth {
-  Token: String
+  AccessToken: String
+  RefreshToken: String
   AccountName: String
 }
 

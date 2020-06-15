@@ -10,7 +10,7 @@ import verifyToken from '../../../utils/verifyToken'
 
 export default {
 	Mutation: {
-		modifyGroup: async (root, { Token, _id, GroupMasterID, GroupName, Members}) => {
+		updateGroup: async (root, { Token, _id, GroupMasterID, GroupName, Members}) => {
     	// 유저 토큰 확인
 		let tokenUid = verifyToken(Token)
         
