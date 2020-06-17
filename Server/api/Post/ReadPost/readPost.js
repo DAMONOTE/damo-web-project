@@ -8,26 +8,20 @@ export default {
 		readPost: async (root, { Token, PostID}) => {
 			
 			// Token 검증
-			let tokenUid = verifyToken(Token)
-			
-			// Post의 GID 확인
-			var post_data=post.findById(PostID)
-			/*
-			var postGroup = await group.findById('GroupID')
-			if(!postGroup){
-				throw new Error("[MSG] Can not find the group.")
+			let userId = verifyToken(Token)
+			if(!userId){
+				throw new Error("[MSG] Verify failed.")
 			}
-			var members = postGroup.Members
-			console.log(members)
-			console.log(tokenUid, typeof(tokenUid))
-			const isFound = members.find(res => res == tokenUid)
-			if(!isFound){
-				throw new Error("[MSG] user is not member in group.")
+			// Post ID의 Group ID를 통해 해당 그룹에 유저가 포함되는지 확인
+			var postData = post.findById(PostID)
+			var groupData = group.findById(postData.GroupID)
+			var groupMembers = groupData.Members
+
+			if(!groupMembers.find(userId)){
+				throw new Error("[MSG] You don't have permission for the article.")
+			}else{
+				return await post.findById(PostID)
 			}
-			*/
-			// find post in DB
-			return await post.findById(PostID)
-			
 		}
-	} // new
+	}
 };
