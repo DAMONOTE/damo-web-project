@@ -1,8 +1,7 @@
 type Mutation {
-    modifyGroup(
+    updateGroup(
         Token: String!
         _id: ID!
-
         GroupMasterID: ID!
         GroupName: String!
         Members: [ID]
