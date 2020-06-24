@@ -35,4 +35,4 @@ server.start({ port: options.port }, () =>
   console.log(`Server is running on http://localhost:${options.port}`)
 );
 */
-server.start(options ,() => console.log('[MSG] Server is running on localhost:'+options.port))
+server.start(options ,() => console.log('[DEBUG] Server is running on localhost:'+options.port))

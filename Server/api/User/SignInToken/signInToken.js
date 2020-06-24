@@ -1,7 +1,6 @@
 import user from '../../../models/User'
 import verifyToken from '../../../utils/verifyToken'
 import jwt from 'jsonwebtoken'
-var serverSecretKey = "test"
 
 export default {
 	Query: {
