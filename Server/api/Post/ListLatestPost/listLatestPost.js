@@ -5,7 +5,7 @@ import verifyToken from '../../../utils/verifyToken'
 
 export default {
 	Query: {
-		listLatestPost: async (root, { Token, GroupID}) => {
+		listLatestPost: async (root, { Token, GroupID, Image}) => {
 			// Check Token
 			let tokenUid = verifyToken(Token)
 			

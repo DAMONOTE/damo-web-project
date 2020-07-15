@@ -20,6 +20,9 @@ const PostSchema = new Schema({
     Contents: {
         type: String
     },
+    Images:{
+        type: [String]
+    },
     CreatedDate: {
         type: Date,
         required: true,

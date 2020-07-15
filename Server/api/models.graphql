@@ -29,7 +29,8 @@ type post {
   GroupID: ID!
   UserID: ID!
   Title: String!
-  Contents: String
+  Contents: String,
+  Images:[String],
   CreatedDate: String!
   ModifiedDate: String!
 }
