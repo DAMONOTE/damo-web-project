@@ -28,7 +28,7 @@ function Post() {
   else {
   return (
     <div>
-      <h1>{data.readPost.Contents}</h1>
+      <div dangerouslySetInnerHTML={{ __html: data.readPost.Contents }}/>
     </div>
   );
   }

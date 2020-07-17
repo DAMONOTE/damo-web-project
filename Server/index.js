@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 
 
 const dbName = "cnt2020_db1";
-const uri = `mongodb://192.168.0.111:27017/${dbName}?retryWrites=true&w=majority`
+const uri = `mongodb://root:@cnt2020@localhost:27017/${dbName}?retryWrites=true&w=majority`
 mongoose.Promise = global.Promise;
 mongoose.connect(uri, { useNewUrlParser: true });
 

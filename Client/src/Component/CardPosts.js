@@ -2,6 +2,7 @@ import React from "react";
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
+import Fab from "@material-ui/core/Fab"
 import Typography from "@material-ui/core/Typography";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -17,6 +18,11 @@ import { Link } from "react-router-dom"
 const useStyles = makeStyles(theme => ({
     root: {
         padding: 30,
+    },
+    fab:{
+        position: "fixed",
+        right:10,
+        bottom:10,
     },
 }));
 
@@ -94,6 +100,9 @@ function Posts(props) {
                     </Grid>
                 ))}
             </Grid>
+            <Link to='/Editor'> 
+                <Fab className={classes.fab}/>
+            </Link>
         </div>
     );
     }
