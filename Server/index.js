@@ -4,9 +4,11 @@ import schema from "./schema"
 import mongoose from 'mongoose'
 
 
-const dbName = "cnt2020_db1";
-const uri = `mongodb://root:@cnt2020@localhost:27017/${dbName}?retryWrites=true&w=majority`
-mongoose.Promise = global.Promise;
+const dbName = "cnt2020_db1"
+const user = "root"
+const pwd = "@cnt2020"
+const uri = `mongodb://${user}:${pwd}@localhost:27017/${dbName}?retryWrites=true&w=majority`
+//mongoose.Promise = global.Promise;
 mongoose.connect(uri, { useNewUrlParser: true });
 
 const server = new GraphQLServer({
@@ -30,7 +32,6 @@ server.express.get('/', (req, res) => {
   res.json({
       msg: 'DamoNote Main Page.'
   });
-  
 });
 
 server.start(options ,() => console.log('[DEBUG] Server is running on localhost:'+options.port))
