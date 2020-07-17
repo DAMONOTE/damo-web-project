@@ -20,9 +20,11 @@ const options = {
   hostname: '0.0.0.0'
 }
 
-// added
-server.express.set('views', __dirname + '/views');
-server.express.engine('html', require('ejs').renderFile);
+// added for cors
+server.express.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 server.express.get('/', (req, res) => {
   res.json({
@@ -30,9 +32,5 @@ server.express.get('/', (req, res) => {
   });
   
 });
-/*
-server.start({ port: options.port }, () =>
-  console.log(`Server is running on http://localhost:${options.port}`)
-);
-*/
+
 server.start(options ,() => console.log('[DEBUG] Server is running on localhost:'+options.port))
