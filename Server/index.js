@@ -5,8 +5,8 @@ import mongoose from 'mongoose'
 
 
 const dbName = "cnt2020_db1"
-const user = "root"
-const pwd = "@cnt2020"
+const user = "accountUser"
+const pwd = "count2020"
 const uri = `mongodb://${user}:${pwd}@localhost:27017/${dbName}?retryWrites=true&w=majority`
 //mongoose.Promise = global.Promise;
 mongoose.connect(uri, { useNewUrlParser: true });
