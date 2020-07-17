@@ -5,7 +5,7 @@ import verifyToken from '../../../utils/verifyToken'
 
 export default {
 	Mutation: {
-		createPost: async (root, { Token, GroupID, Title = '', Contents = '' }) => {
+		createPost: async (root, { Token, GroupID, Title = '', Contents = '',Images = []}) => {
 			// Check Token
 			let tokenUid = verifyToken(Token)
 			
@@ -22,7 +22,7 @@ export default {
 				throw new Error("[DEBUG] user is not member in group.")
 			}
 			// create post
-			return await post.create({ GroupID: GroupID, UserID: tokenUid, Title: Title, Contents: Contents,CreatedDate: undefined,ModifiedDate: undefined});
+			return await post.create({ GroupID: GroupID, UserID: tokenUid, Title: Title, Contents: Contents, Images: Images,CreatedDate: Date.now(),ModifiedDate: Date.now()});
 		}
 	} // new
 };

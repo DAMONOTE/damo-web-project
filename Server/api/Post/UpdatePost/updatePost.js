@@ -5,7 +5,7 @@ import verifyToken from '../../../utils/verifyToken'
 
 export default {
 	Mutation: {
-		updatePost: async (root, { Token, GroupID, PostID, Title, Contents}) => {
+		updatePost: async (root, { Token, GroupID, PostID, Title, Contents, Images}) => {
             let date = new Date();
             let modifiedDate = date;
 			
@@ -19,6 +19,7 @@ export default {
 						$set: {
 								Title:Title,
 								Contents:Contents,
+								Images: Images,
 								ModifiedDate:modifiedDate
 						}
 		

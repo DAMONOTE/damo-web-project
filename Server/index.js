@@ -26,7 +26,7 @@ server.express.engine('html', require('ejs').renderFile);
 
 server.express.get('/', (req, res) => {
   res.json({
-      msg: 'graphql playground로 가려면 cnt2020.hopto.org/graphql 로...'
+      msg: 'DamoNote Main Page.'
   });
   
 });
