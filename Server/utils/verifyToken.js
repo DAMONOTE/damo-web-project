@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import user from '../models/User'
-import { serverSecretKey } from './serverConfig'
+import {serverSecretKey} from './serverConfig'
 
 export default function verifyToken(token){
     const decodedToken = jwt.verify(token, serverSecretKey,{complete: true});
