@@ -3,8 +3,7 @@ import user from '../../../models/User'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import verifyToken from '../../../utils/verifyToken'
-
-var serverSecretKey = "test"
+import {serverSecretKey} from '../../../utils/serverConfig'
 
 export default {
   Mutation: {
