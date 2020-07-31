@@ -21,10 +21,11 @@ function onClickPost() {
 
 function PostList() {
   const token = window.localStorage.getItem("auth")
+  const groupid = window.localStorage.getItem("group")
   const { loading, error, data } = useQuery(GET_POSTS, {
     variables: {
       Token: token,
-      GroupID: "5ed7905c28dfce321c348a35",
+      GroupID: groupid,
       Amount: 100,
       Page: 1,
     },

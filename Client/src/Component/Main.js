@@ -1,6 +1,7 @@
 import React, { Component, PropTypes, useState, useEffect } from "react"
 import gql from "graphql-tag"
 import Sidebar from "./Sidebar"
+import SidebarTest from "./SidebarTest"
 import { useQuery } from "@apollo/react-hooks"
 import SignBox from "./SignBox"
 
@@ -25,7 +26,7 @@ function Main() {
       <span key={i}>{message}</span>))}</p>)*/
   } else if (data.signInToken.AccessToken) {
     window.localStorage.setItem("auth", data.signInToken.AccessToken)
-    return <Sidebar></Sidebar>
+    return <SidebarTest></SidebarTest>
   } else {
     return <SignBox></SignBox>
   }
