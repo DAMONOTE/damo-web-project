@@ -14,6 +14,7 @@ const CREATE_POST = gql`
 
 function Editor() {
   const token = window.localStorage.getItem("auth")
+  const groupid = window.localStorage.getItem("group")
   const [value, setValue] = useState(RichTextEditor.createEmptyValue())
   const [creatpost, { loading: loading, error: error }] = useMutation(CREATE_POST)
 
@@ -26,7 +27,7 @@ function Editor() {
     creatpost({
       variables: {
         Token: token,
-        GroupID: "5ed7905c28dfce321c348a35",
+        GroupID: groupid,
         Title: "fuck you",
         Contents: value.toString("html"),
       },
