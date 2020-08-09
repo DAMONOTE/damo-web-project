@@ -5,6 +5,8 @@ type user {
   Name: String
   Email: String
   Gid: [ID]
+  CreatedDate: String!
+  ModifiedDate: String!
 }
 
 type auth {
