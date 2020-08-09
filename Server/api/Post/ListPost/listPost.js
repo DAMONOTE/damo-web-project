@@ -22,7 +22,7 @@ export default {
 				throw new Error("[DEBUG] user is not member in group.")
 			}
 			// DB에서 특정 페이지 게시글 특정 수량 만큼 가져오기
-			return (await post.find().select('_id Title UserID CreatedDate').sort({CreatedDate: 1}).skip((Page-1)*Amount).limit(Amount))
+			return (await post.find({GroupID : postGroup._id}).select('_id Title UserID CreatedDate').sort({CreatedDate: 1}).skip((Page-1)*Amount).limit(Amount))
 		}
 	} // new
 };

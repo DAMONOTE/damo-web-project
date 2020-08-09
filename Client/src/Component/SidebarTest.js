@@ -25,10 +25,10 @@ import { Route, BrowserRouter as Router, Link, Switch, Redirect } from "react-ro
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/react-hooks"
 
-const GETALL_GROUP = gql`
-  query getAllGroups($Token: String!) {
-    getAllGroups(Token: $Token) {
-      _id
+const GET_USERINFO = gql`
+  query getUserInfo($Token: String!) {
+    getUserInfo(Token: $Token) {
+        Gid
     }
   }
 `
@@ -75,7 +75,7 @@ function ResponsiveDrawer(props) {
     const classes = useStyles()
     const theme = useTheme()
     const [mobileOpen, setMobileOpen] = React.useState(false)
-    const { loading, error, data } = useQuery(GETALL_GROUP, {
+    const { loading, error, data } = useQuery(GET_USERINFO, {
         variables: { Token: token },
     })
 
@@ -86,8 +86,9 @@ function ResponsiveDrawer(props) {
                 <span key={i}>{message}</span>
             ))}
         </p>)
-    } else if (data.getAllGroups.length > 0) {
-        window.localStorage.setItem("group", data.getAllGroups[0]._id)
+    } else if (data.getUserInfo) {
+        window.localStorage.setItem("group", data.getUserInfo.Gid[0])
+        debugger
     } else {
 
     }
@@ -101,13 +102,13 @@ function ResponsiveDrawer(props) {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-                <ListItem button key="Editor" component={Link} to="./Editor">
+                <ListItem button key="Editor" component={Link} to="/Editor">
                     <ListItemText primary="Editor" />
                 </ListItem>
-                <ListItem button key="Posts" component={Link} to="./Posts">
+                <ListItem button key="Posts" component={Link} to="/Posts">
                     <ListItemText primary="Posts" />
                 </ListItem>
-                <ListItem button key="Cards" component={Link} to="./Cards">
+                <ListItem button key="Cards" component={Link} to="/Cards">
                     <ListItemText primary="Cards" />
                 </ListItem>
             </List>
@@ -169,10 +170,10 @@ function ResponsiveDrawer(props) {
                 </nav>
                 <main className={classes.content}>
                     <Switch>
-                        <Route path="/Editor" component={Editor} />
-                        <Route path="/Posts" component={PostList} />
-                        <Route path="/Cards" component={CardPosts} />
-                        <Route path="/Post/:id" component={Post} />
+                        <Route exact path="/Editor" component={Editor} />
+                        <Route exact path="/Posts" component={PostList} />
+                        <Route exact path="/Cards" component={CardPosts} />
+                        <Route exact path="/Post/:id" component={Post} />
                         <Redirect from="*" to="/" />
                     </Switch>
                 </main>
