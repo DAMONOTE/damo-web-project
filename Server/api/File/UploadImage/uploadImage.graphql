@@ -1,0 +1,5 @@
+type Mutation {
+    uploadImage(
+        file: Upload!
+    ): File!
+}
