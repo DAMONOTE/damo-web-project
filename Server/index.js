@@ -17,7 +17,7 @@ const server = new GraphQLServer({
 const options = {
   endpoint: '/api',
   playground: '/graphql',
-  port: 30001,
+  port: 30000,
   hostname: '0.0.0.0'
 }
 
