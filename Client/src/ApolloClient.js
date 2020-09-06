@@ -1,9 +1,9 @@
 import ApolloClient from "apollo-client"
 import { InMemoryCache } from "apollo-cache-inmemory"
-import { createHttpLink } from "apollo-link-http"
+import { createUploadLink } from "apollo-upload-client"
 
 const client = new ApolloClient({
-  link: createHttpLink({ uri: "http://cnt2020.hopto.org/api" }),
+  link: createUploadLink({ uri: "http://cnt2020.hopto.org/api" }),
   cache: new InMemoryCache(),
 })
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "react-apollo-hooks"
 import { useLocalStorage } from "../Basic/Utils";
 import { useParams } from "react-router-dom";
 import gql from "graphql-tag";

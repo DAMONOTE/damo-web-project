@@ -2,7 +2,7 @@ import React, { Component, PropTypes, useState, useEffect } from "react"
 import gql from "graphql-tag"
 import Sidebar from "./Sidebar"
 import SidebarTest from "./SidebarTest"
-import { useQuery } from "@apollo/react-hooks"
+import { useQuery } from "react-apollo-hooks"
 import SignBox from "./SignBox"
 
 const SIGNIN_TOKEN = gql`

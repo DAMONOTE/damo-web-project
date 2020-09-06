@@ -1,6 +1,6 @@
 import React from "react"
 import gql from "graphql-tag"
-import { useMutation } from "@apollo/react-hooks"
+import { useMutation } from "react-apollo-hooks"
 import { TextField, Button } from '@material-ui/core';
 
 const SIGNUP_USER = gql`

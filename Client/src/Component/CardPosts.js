@@ -12,7 +12,7 @@ import Button from "@material-ui/core/Button";
 import TrendingFlat from '@material-ui/icons/TrendingFlat';
 
 import gql from "graphql-tag"
-import { useQuery } from "@apollo/react-hooks"
+import { useQuery } from "react-apollo-hooks"
 import { Link } from "react-router-dom"
 
 const useStyles = makeStyles(theme => ({
