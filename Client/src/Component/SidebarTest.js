@@ -23,7 +23,7 @@ import CardPosts from './CardPosts'
 import { Route, BrowserRouter as Router, Link, Switch, Redirect } from "react-router-dom";
 
 import gql from "graphql-tag"
-import { useQuery } from "@apollo/react-hooks"
+import { useQuery } from "react-apollo-hooks"
 
 const GET_USERINFO = gql`
   query getUserInfo($Token: String!) {

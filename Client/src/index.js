@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ApolloProvider } from "@apollo/react-hooks"
+import { ApolloProvider } from "react-apollo-hooks"
 import client from "./ApolloClient"
 import { BrowserRouter as Router } from "react-router-dom";
 
